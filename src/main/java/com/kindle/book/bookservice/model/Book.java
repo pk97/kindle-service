@@ -24,7 +24,6 @@ public class Book {
         this.expiryDate = expiryDate;
     }
 
-    @Id
     public String bookId;
     private String name;
     private int price;

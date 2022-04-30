@@ -45,6 +45,10 @@ public class KindleService {
                .next();
     }
 
+    public Flux<Book> addBook(String bookId) {
+        return bookRepository.insert(Mono.just(new Book(bookId, "a", 12,LocalDate.now())));
+    }
+
 
     public Flux<Book> checkout(String bookId, String userId) {
         return Flux.zip(getUser(userId), getBook(bookId))
